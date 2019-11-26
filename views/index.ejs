@@ -1,25 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li>
-          <% if (user) { %>
-            <a href="/logout">Log Out</a>
-          <% } else { %>
-            <a href="/auth/google">Login with Google</a>
-          <% } %>
-        </li>
-      </ul>
-    </nav>
-
-
+<%- include('./partials/header') %>
     <h1><%= title %></h1>
     <p>Welcome to Romana's <%= title %>!</p>
     <p>Here you will have a chance to get to know me and the services that I offer at the Creative Corner. At the "About Me" page you will have a chance to know more about me and at the "Services" page you will see the services that I am currently offering. For more information, offers, and services, please Sign In. If you are not a member yet, please Sign Up to be a member at the Creative Corner.</p>
-  </body>
-</html>
+<%- include('./partials/footer') %>
