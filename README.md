@@ -2,7 +2,7 @@
 
 Created By | Last Updated
 -----------|--------------
-Salma Khan | November 24, 2019
+Salma Khan | November 26, 2019
 
 
 ## Description & Screenshot  
@@ -26,13 +26,13 @@ Salma Khan | November 24, 2019
 *	Express.js
 *	MongoDB
 *	Mongoose
-*	oAuth Authorization 
+*	OAuth Authorization 
 
 
-## Next Steps...
+## Next Steps
 
 
-## Link to the Deployed Page
+## Link to the Deployed App
 
 
 
