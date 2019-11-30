@@ -6,6 +6,11 @@ module.exports = {
 
 function index(req, res) {
 Service.find({}, function(err, services) {
-    res.render('services/index', { title: 'All Services', services });
+    res.render('services/index', { 
+        title: 'All Services', 
+        services,
+        user: req.user
+     });
 });
 }
+
