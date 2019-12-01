@@ -2,7 +2,7 @@
 
 Created By | Last Updated
 -----------|--------------
-Salma Khan | November 29, 2019
+Salma Khan | December 1, 2019
 
 
 ## Description & Screenshot  
@@ -21,7 +21,7 @@ Salma Khan | November 29, 2019
 *	JavaScript
 *	CSS
 *	HTML
-*	EJS
+*	EJS (partials)
 *	Node.js
 *	Express.js
 *	MongoDB
