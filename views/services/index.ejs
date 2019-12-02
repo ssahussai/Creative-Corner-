@@ -3,9 +3,7 @@
 <table>
     <thead>
         <tr>
-        <th>Name of Service</th>
-        <th>Description</th>
-        <th>Price (USD)</th>
+        <th>Service Name</th>
         <th>Learn More</th>
         </tr>
     </thead>
@@ -13,8 +11,6 @@
           <% services.forEach(function(s) { %>
         <tr>
             <td><%= s.service %></td>
-            <td><%= s.description %></td>
-            <td><%= s.price %></td>
             <td><a href="/services/<%= s._id %>">Click Here</a></td>
         </tr>
             <% }); %>
