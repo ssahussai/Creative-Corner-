@@ -1,7 +1,7 @@
 var router = require('express').Router();
 var passport = require('passport');
 
-/* GET home page. */
+/*  home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
     user: req.user, 
