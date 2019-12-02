@@ -29,4 +29,12 @@ router.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
+//for contact us page
+router.get('/contact', function(req, res) {
+  res.render('contact/index', { 
+    title: 'Contact Us',
+    user: req.user 
+  });
+});
+
 module.exports = router;
