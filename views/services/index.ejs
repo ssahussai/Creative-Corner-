@@ -1,26 +1,25 @@
 <%- include('../partials/header') %>
-<div>
-    <h1>All Available Services</h1>
-    <div>
-        <div>
-            <h2>Facial Tattoo</h2><a href="/services/">Show More Details</a><br>
-            <br><img src="https://i.imgur.com/80H6dGV.jpg?1" alt="Tattoo image">
-        </div>
-        <div>
-            <h2>Portrait</h2><a href="/services/">Show More Details</a><br>
-            <br><img src="https://i.imgur.com/CXlb1JJ.jpg?1" alt="Portrait of a boy">
-        </div>
-        <div>
-            <h2>Henna</h2><a href="/services/">Show More Details</a><br>
-            <br><img src="https://i.imgur.com/id9Dg3E.jpg?1" alt="henna art on a hand">
-        </div>
-        <div>
-            <h2>Event Decoration</h2><a href="/services/">Show More Details</a><br>
-            <br><img src="https://i.imgur.com/f3pr5PR.jpg?2" alt="An event decoration picture">
-        </div>
-    </div>
-</div>
-
+<h2>List of All Available Services</h2>
+<table>
+    <thead>
+        <tr>
+        <th>Name of Service</th>
+        <th>Description</th>
+        <th>Price (USD)</th>
+        <th>Learn More</th>
+        </tr>
+    </thead>
+    <tbody>
+          <% services.forEach(function(s) { %>
+        <tr>
+            <td><%= s.service %></td>
+            <td><%= s.description %></td>
+            <td><%= s.price %></td>
+            <td><a href="/services/<%= s._id %>">Click Here</a></td>
+        </tr>
+            <% }); %>
+    </tbody>
+</table>
 
 <%- include('../partials/footer') %>
 
