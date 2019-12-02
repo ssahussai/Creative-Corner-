@@ -15,6 +15,9 @@ var serviceSchema = new Schema({
         required: true,
         min: 1,
         max: 9999
+    },
+    image: {
+        type: String
     }
 }, {
     timestamps: true

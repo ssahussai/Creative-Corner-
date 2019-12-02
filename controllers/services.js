@@ -16,10 +16,10 @@ Service.find({}, function(err, services) {
 }
 
 function show(req, res) {
-Service.findById(req.params.id).exec(function(err, services) {
+Service.findById(req.params.id).exec(function(err, service) {
     res.render('services/show', {
         title: 'Service Details', 
-        services,
+        service,
         user: req.user
     });
 });
