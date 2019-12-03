@@ -15,6 +15,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var servicesRouter = require('./routes/services');
+var reviewsRouter = require('./routes/reviews');
 
 
 var app = express();
@@ -39,6 +40,7 @@ app.use(passport.session());
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
 app.use('/services', servicesRouter);
+app.use('/', reviewsRouter);
 
 
 // catch 404 and forward to error handler
