@@ -9,6 +9,7 @@
 
 <br><br>
 <h2>Customer Reviews of the Service</h2>
+<h3>Please write a review below:</h3>
 <form method="POST" action="/services/<%= service._id %>/reviews">
  <label>Name:</label>
  <textarea name="name"></textarea><br><br>
@@ -23,8 +24,9 @@
         <option value="5">5</option>
  </select><br><br>
 <input type="submit" value="Add Review">
-</form>
+</form><br><br>
 
+<h3>Previous Reviews</h3>
 <% if (service.reviews.length) { %>
         <table>
           <thead>
@@ -46,17 +48,11 @@
                 <td><%= r.rating %></td>
               </tr>
             <% }); %>
-            <tr>
-              <td colspan="2"></td>
-              <td><strong><%= (total / service.reviews.length).toFixed(1) %></strong></td>
-            </tr>
           </tbody>
         </table>
         <% } else { %>
         <h5>No Customer Reviews Yet</h5>
         <% } %>
-
-
 
 <%- include('../partials/footer') %>
 
