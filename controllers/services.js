@@ -2,7 +2,8 @@ var Service = require('../models/service');
 
 module.exports = {
     index,
-    show
+    show,
+    editReview
 }
 
 function index(req, res) {
@@ -23,5 +24,12 @@ Service.findById(req.params.id).exec(function(err, service) {
         user: req.user
     });
 });
+}
+
+function editReview(req, res) {
+    Service.findById(req.params.serviceid, function(err, service) {
+        const review = service.reviews.id(req.params.reviewid)
+        res.render('services/update', {title: "Update Review", user: req.user, review, service })
+    })
 }
 

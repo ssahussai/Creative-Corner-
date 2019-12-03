@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+<h3>Edit Review</h3>
+<form action="/services/<%= service._id %>/reviews/<%= review._id %>/update?_method=PUT" method="POST">
+ <label>Name:</label>
+ <input name="name" value="<%= review.name %>"><br><br>
+ <label>Review:</label>
+ <textarea name="content"><%=review.content%></textarea><br><br>
+ <label>Rating:</label>
+ <select name="rating">
+        <% for(let i = 1; i <= 5; i++) { %>
+              if(i === review.rating) {
+              <option value="<%= i %>" selected><%= i %></option>
+              }
+              <option value="<%= i %>"><%= i %></option>
+       <% } %>
+       
+ </select><br><br>
+<input type="submit" value="Update Review">
+</form><br><br>
+
+
+
+<%- include('../partials/footer') %>

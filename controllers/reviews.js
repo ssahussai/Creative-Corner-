@@ -1,7 +1,7 @@
 var Service = require('../models/service');
 
 module.exports = {
-    create
+    create, 
 };
 
 function create(req, res) {
@@ -12,3 +12,13 @@ Service.findById(req.params.id, function(err, service) {
     });
   });
 }
+
+
+
+// function update(req, res) {
+// Service.findByIdAndUpdate(req.params.id, {review: } {new: true}, function(err, doc) {
+//     console.log(doc);
+//     res.redirect(`/services/${service._id}`);
+// });
+// }
+
