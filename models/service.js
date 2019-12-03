@@ -1,6 +1,25 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+var reviewSchema = new Schema ({
+    name: {
+        type: String,
+        required: true
+    },
+    content: {
+        type: String,
+        required: true
+    },
+    rating: {
+        type: Number,
+        min: 1,
+        max: 5,
+        default: 5
+    } 
+}, {
+    timestamps: true
+});
+
 var serviceSchema = new Schema({
     service: {
         type: String,
@@ -18,7 +37,8 @@ var serviceSchema = new Schema({
     },
     image: {
         type: String
-    }
+    },
+    reviews: [reviewSchema]
 }, {
     timestamps: true
 });
