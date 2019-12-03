@@ -3,6 +3,7 @@ var Service = require('../models/service');
 module.exports = {
     index,
     show,
+    create,
     editReview,
     updateReview
 }
@@ -15,7 +16,7 @@ function index(req, res) {
             user: req.user
         });
     });
-    }
+}
 
 function show(req, res) {
     Service.findById(req.params.id).exec(function(err, service) {
@@ -25,7 +26,18 @@ function show(req, res) {
             user: req.user
         });
     });
-    }
+}
+
+
+function create(req, res) {
+    Service.findById(req.params.id, function(err, service) {
+        service.reviews.push(req.body);
+        service.save(function(err) {
+            res.redirect(`/services/${service._id}`);
+        });
+    });
+}
+
 
 function editReview(req, res) {
     Service.findById(req.params.serviceid, function(err, service) {
@@ -37,8 +49,8 @@ function editReview(req, res) {
             review, 
             service 
         });
-      });
-    }
+    });
+}
 
 
 function updateReview(req, res) {
@@ -48,5 +60,5 @@ function updateReview(req, res) {
         service.save(function(err) {
             res.redirect(`/services/${req.params.serviceid}`);
         });
-      });
+    });
 }
