@@ -8,12 +8,8 @@
  <label>Rating:</label>
  <select name="rating">
         <% for(let i = 1; i <= 5; i++) { %>
-              if(i === review.rating) {
-              <option value="<%= i %>" selected><%= i %></option>
-              }
-              <option value="<%= i %>"><%= i %></option>
-       <% } %>
-       
+            <option value="<%- i %>" <%- i === review.rating ? 'selected' : ''%>><%= i %></option>
+       <% } %>      
  </select><br><br>
 <input type="submit" value="Update Review">
 </form><br><br>
