@@ -8,7 +8,7 @@ Salma Khan | December 3, 2019
 ## Description & Screenshot
 
 
-![Creative Corner](../images/Creative CornerWholePg.png)
+![Creative Corner](../images/CreativeCornerWholePg.png)
 
 
 ## User Stories
