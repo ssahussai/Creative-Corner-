@@ -5,7 +5,8 @@ module.exports = {
     show,
     create,
     editReview,
-    updateReview
+    updateReview,
+    deleteReview
 }
 
 function index(req, res) {
@@ -60,5 +61,15 @@ function updateReview(req, res) {
         service.save(function(err) {
             res.redirect(`/services/${req.params.serviceid}`);
         });
+    });
+}
+
+
+function deleteReview(req, res) {
+    Service.findById(req.params.serviceid, function(err, service) {
+        const review = service.reviews.pull(req.params.reviewid);
+        service.save(function(err) {
+            res.redirect(`/services/${req.params.serviceid}`);
+        })
     });
 }

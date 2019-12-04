@@ -47,7 +47,12 @@
                 <td><%= r.content %></td>
                 <td><%= r.rating %></td>
                 <td>
-                  <a href="/services/<%= service._id %>/reviews/<%= r._id %>/edit">Update</a>
+                  <a id="update" href="/services/<%= service._id %>/reviews/<%= r._id %>/edit">Update</a>
+                </td>
+                <td>
+                    <form action="/services/<%= service._id %>/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                      <input type="submit" value="DELETE">
+                    </form>      
                 </td>
               </tr>
             <% }); %>
@@ -56,6 +61,19 @@
         <% } else { %>
         <h5>No Customer Reviews Yet</h5>
         <% } %>
+
+        <style>
+          #update {
+            background-color: aliceblue;
+            padding: 2px;
+            border: 1px solid black;
+            box-shadow: 2px 2px solid black;
+            text-decoration: none;
+            border-radius: 3px;
+            font-style: 12px;
+            color: black;
+          }
+        </style>
 
 <%- include('../partials/footer') %>
 

@@ -2,6 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
+var methodOverride = require('method-override');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
@@ -17,6 +18,8 @@ var indexRouter = require('./routes/index');
 var servicesRouter = require('./routes/services');
 
 var app = express();
+
+app.use(methodOverride('_method'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,6 +37,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
