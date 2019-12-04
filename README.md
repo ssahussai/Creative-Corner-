@@ -5,7 +5,9 @@ Created By | Last Updated
 Salma Khan | December 3, 2019
 
 
-## Description & Screenshot  
+## Description & Screenshot
+
+
 ![Creative Corner](../images/Creative CornerWholePg.png)
 
 
