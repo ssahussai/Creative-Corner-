@@ -2,7 +2,7 @@
 
 Created By | Last Updated
 -----------|--------------
-Salma Khan | December 3, 2019
+Salma Khan | December 4, 2019
 
 
 ## Description & Screenshot
@@ -39,7 +39,7 @@ Salma Khan | December 3, 2019
 
 
 ## Link to the Deployed App
-
+[Romana's Creative Corner](https://romana-creative-corner.herokuapp.com/)
 
 
 
