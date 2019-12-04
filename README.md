@@ -8,7 +8,7 @@ Salma Khan | December 4, 2019
 ## Description & Screenshot
 
 
-![Creative Corner](./images/screenshot.png)
+![Creative Corner](../images/screenshot.png)
 
 
 ## User Stories
@@ -33,6 +33,7 @@ Salma Khan | December 4, 2019
 *   MongoDB Atlas 
 *	Mongoose
 *	OAuth Authorization 
+*   Bootstrap 
 
 
 ## Next Steps
