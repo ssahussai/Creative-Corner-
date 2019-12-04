@@ -6,6 +6,8 @@ Salma Khan | December 3, 2019
 
 
 ## Description & Screenshot
+
+
 ![Creative Corner](./images/screenshot.png)
 
 
@@ -37,7 +39,7 @@ Salma Khan | December 3, 2019
 
 
 ## Link to the Deployed App
-[Romana's Creative Corner](https://romana-creative-corner.herokuapp.com/)
+
 
 
 
