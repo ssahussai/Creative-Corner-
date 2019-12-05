@@ -1,25 +1,37 @@
 <%- include('../partials/header') %>
-<h2>List of All Available Services</h2>
-<table>
-    <thead>
-        <tr>
-        <th>Service Name</th>
-        <th>Learn More</th>
-        </tr>
-    </thead>
-    <tbody>
-          <% services.forEach(function(s) { %>
-        <tr>
-            <td><%= s.service %></td>
-            <td><a href="/services/<%= s._id %>">Click Here</a></td>
-        </tr>
-            <% }); %>
-    </tbody>
-</table>
+
+<section class="page-section">
+        <div class="container">
+          <div class="product-item">
+            <div class="product-item-title d-flex">
+              <div class="bg-faded p-5 d-flex ml-auto rounded">
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper">Unique &amp; Customized</span>
+                  <span class="section-heading-lower">Available Services</span>
+                </h2>
+              </div>
+            </div>
+            <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="/images/servicelogo.jpg" alt="">
+            <div class="product-item-description d-flex mr-auto">
+              <div class="bg-faded p-5 rounded">
+                <p class="mb-0">We take pride in our work and it shows. Every time you book a service with us, we guarantee that it will be an experience worth having. We are currently offering the following services:</p>
+                <table>
+                        <tbody>
+                              <% services.forEach(function(s) { %>
+                            <tr>
+                                <td><%= s.service %></td>
+                                <td><a href="/services/<%= s._id %>"> - Details</a></td>
+                            </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
 <%- include('../partials/footer') %>
-
-
 
 
 

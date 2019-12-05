@@ -19,3 +19,26 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 
+#update {
+  background-color: aliceblue;
+  padding: 2px;
+  border: 1px solid black;
+  box-shadow: 2px 2px solid black;
+  text-decoration: none;
+  border-radius: 3px;
+  font-style: 12px;
+  color: black;
+}
+
+#deleteInput {
+  background-color: aliceblue;
+  padding: 2px;
+  border: 1px solid black;
+  box-shadow: 2px 2px solid black;
+  text-decoration: none;
+  border-radius: 3px;
+  font-style: 12px;
+  color: black;
+
+}
+
