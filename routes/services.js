@@ -12,7 +12,7 @@ router.post('/:id/reviews', servicesCtrl.create);
 //edit reviews for a service
 router.get('/:serviceid/reviews/:reviewid/edit', servicesCtrl.editReview);
 //update reviews for a service
-router.post('/:serviceid/reviews/:reviewid/update', servicesCtrl.updateReview);
+router.put('/:serviceid/reviews/:reviewid/update', servicesCtrl.updateReview);
 //delete a review
 router.delete('/:serviceid/reviews/:reviewid', servicesCtrl.deleteReview);
 

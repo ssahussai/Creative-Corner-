@@ -21,94 +21,92 @@
     </div>
   </div>
 </section>
-
 <section class="page-section">
-    <div class="container">
-      <div class="product-item">
-        <div class="product-item-title d-flex">
-          <div class="bg-faded p-5 d-flex ml-auto rounded">
-            <h2 class="section-heading mb-0">
-              <span class="section-heading-upper">Write a Review for</span>
-              <span class="section-heading-lower">This Service</span>
-            </h2>
-          </div>
+  <div class="container">
+    <div class="product-item">
+      <div class="product-item-title d-flex">
+        <div class="bg-faded p-5 d-flex ml-auto rounded">
+          <h2 class="section-heading mb-0">
+            <span class="section-heading-upper">Write a Review for</span>
+            <span class="section-heading-lower">This Service</span>
+          </h2>
         </div>
-        <div class="product-item-description d-flex mr-auto">
-          <div class="bg-faded p-5 rounded">
-              <p class="mb-0">Your feedback is very important to us. Please leave a review for this service so that we can serve you better in the future.</p><br>
-              <form method="POST" action="/services/<%= service._id %>/reviews">
-                <label>Name:</label>
-                <textarea name="name"></textarea><br><br>
-                <label>Review:</label>
-                <textarea name="content"></textarea><br><br>
-                <label>Rating:</label>
-                <select name="rating">
-                       <option value="1">1</option>
-                       <option value="2">2</option>
-                       <option value="3">3</option>
-                       <option value="4">4</option>
-                       <option value="5">5</option>
-                </select><br><br>
-               <input type="submit" value="Add Review">
-               </form><br><br>
-          </div>
+      </div>
+      <div class="product-item-description d-flex mr-auto">
+        <div class="bg-faded p-5 rounded">
+            <p class="mb-0">Your feedback is very important to us. Please leave a review for this service so that we can serve you better in the future.</p><br>
+            <form method="POST" action="/services/<%= service._id %>/reviews">
+              <label>Name:</label>
+              <textarea name="name"></textarea><br><br>
+              <label>Review:</label>
+              <textarea name="content"></textarea><br><br>
+              <label>Rating:</label>
+              <select name="rating">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+              </select><br><br>
+              <input type="submit" value="Add Review">
+              </form><br><br>
         </div>
       </div>
     </div>
-  </section>
-
+  </div>
+</section>
 <section class="page-section">
-    <div class="container">
-      <div class="product-item">
-        <div class="product-item-title d-flex">
-          <div class="bg-faded p-5 d-flex mr-auto rounded">
-            <h2 class="section-heading mb-0">
-              <span class="section-heading-upper">Previous Customer Reviews on</span>
-              <span class="section-heading-lower">This Service</span>
-            </h2>
-          </div>
+  <div class="container">
+    <div class="product-item">
+      <div class="product-item-title d-flex">
+        <div class="bg-faded p-5 d-flex mr-auto rounded">
+          <h2 class="section-heading mb-0">
+            <span class="section-heading-upper">Previous Customer Reviews on</span>
+            <span class="section-heading-lower">This Service</span>
+          </h2>
         </div>
-        <div class="product-item-description d-flex ml-auto">
-          <div class="bg-faded p-5 rounded">
-            <p class="mb-0">This is what our customers have to say about this service:</p><br>
-            <% if (service.reviews.length) { %>
-              <table>
-                <thead>
+      </div>
+      <div class="product-item-description d-flex ml-auto">
+        <div class="bg-faded p-5 rounded">
+          <p class="mb-0">This is what our customers have to say about this service:</p><br>
+          <% if (service.reviews.length) { %>
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Name</th>
+                  <th>Review</th>
+                  <th>Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% var total = 0 %>
+                <% service.reviews.forEach(function(r) { %>
+                  <% total += r.rating %>
                   <tr>
-                    <th>Date</th>
-                    <th>Name</th>
-                    <th>Review</th>
-                    <th>Rating</th>
+                    <td><%= r.createdAt.toLocaleDateString() %></td>
+                    <td><%= r.name %></td>
+                    <td><%= r.content %></td>
+                    <td><%= r.rating %></td>
+                    <td>
+                      <a id="update" href="/services/<%= service._id %>/reviews/<%= r._id %>/edit">Update</a>
+                    </td>
+                    <td>
+                        <form action="/services/<%= service._id %>/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                          <input id="deleteInput" type="submit" value="Delete">
+                        </form>      
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  <% var total = 0 %>
-                  <% service.reviews.forEach(function(r) { %>
-                    <% total += r.rating %>
-                    <tr>
-                      <td><%= r.createdAt.toLocaleDateString() %></td>
-                      <td><%= r.name %></td>
-                      <td><%= r.content %></td>
-                      <td><%= r.rating %></td>
-                      <td>
-                        <a id="update" href="/services/<%= service._id %>/reviews/<%= r._id %>/edit">Update</a>
-                      </td>
-                      <td>
-                          <form action="/services/<%= service._id %>/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                            <input id="deleteInput" type="submit" value="Delete">
-                          </form>      
-                      </td>
-                    </tr>
-                  <% }); %>
-                </tbody>
-              </table>
-              <% } else { %>
-              <h5>No Customer Reviews Yet</h5>
-              <% } %>
-          </div>
+                <% }); %>
+              </tbody>
+            </table>
+            <% } else { %>
+            <h5>No Customer Reviews Yet</h5>
+            <% } %>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 <%- include('../partials/footer') %>
