@@ -1,14 +1,30 @@
 <%- include('../partials/header') %>
-<h2>Service Details</h2>
-<section>
-        <div>Service: <%= service.service%></div><br>
-        <div>Service Description: <%= service.description%></div><br>
-        <div>Price (USD): <%= service.price %></div><br>
-        <img src="/<%= service.image %>" />
+<section class="page-section">
+  <div class="container">
+    <div class="product-item">
+      <div class="product-item-title d-flex">
+        <div class="bg-faded p-5 d-flex mr-auto rounded">
+          <h2 class="section-heading mb-0">
+            <span class="section-heading-upper">More Details on</span>
+            <span class="section-heading-lower">This Service</span>
+          </h2>
+        </div>
+      </div>
+      <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/products-02.jpg" alt="">
+      <div class="product-item-description d-flex ml-auto">
+        <div class="bg-faded p-5 rounded">
+          <div>Service: <%= service.service%></div><br>
+          <div>Service Description: <%= service.description%></div><br>
+          <div>Price (USD): <%= service.price %></div><br>
+          <img src="/<%= service.image %>" />
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <br><br>
-<h2>Customer Reviews of the Service</h2>
+<h2 id="serviceDetails">Customer Reviews of the Service</h2>
 <h3>Please write a review below:</h3>
 <form method="POST" action="/services/<%= service._id %>/reviews">
  <label>Name:</label>
@@ -64,8 +80,4 @@
         <% } %>
 
 <%- include('../partials/footer') %>
-
-
-
-
 
