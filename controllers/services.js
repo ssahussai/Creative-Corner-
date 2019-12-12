@@ -43,7 +43,7 @@ function create(req, res) {
 function editReview(req, res) {
     Service.findById(req.params.serviceid, function(err, service) {
         const review = service.reviews.id(req.params.reviewid);
-        console.log(review)
+        console.log(review) // Always be sure to remove console logs before you ship to production
         res.render('services/updateReview', {
             title: "Update Review", 
             user: req.user, 
@@ -68,6 +68,8 @@ function updateReview(req, res) {
 function deleteReview(req, res) {
     Service.findById(req.params.serviceid, function(err, service) {
         const review = service.reviews.pull(req.params.reviewid);
+            // ^- this variable is never being used
+            // in this case it's better to just use: service.reviews.pull(req.params.reviewid);
         service.save(function(err) {
             res.redirect(`/services/${req.params.serviceid}`);
         })

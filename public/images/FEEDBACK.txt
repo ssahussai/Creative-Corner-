@@ -1,0 +1,1 @@
+I would recommend making the names of your image files with all lowercase characters
