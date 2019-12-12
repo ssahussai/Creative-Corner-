@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const User = require('../models/user'); // User is never used here
 
 module.exports = {
     index
