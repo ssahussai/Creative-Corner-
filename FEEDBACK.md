@@ -1,8 +1,8 @@
-# PROJECT 2 Code Review: ____________________
+# PROJECT 2 Code Review by Daniel Scott
 
 Technical Requirements         | Yes | No |
 :--                            |:--  |:-- |
-Has at least two models        |     |    |
+Has at least two models        |   X  |    |
 A resource can be "Created"  | X |    |
 A resource can be "Updated"  | X |    |
 A resource can be "Deleted"  | X  |    |
@@ -40,7 +40,7 @@ HTML & views                       | Yes |  No |
 :-- | :-- | :-- |
 HTML is properly indented                     |  X   |     |
 HTML is free of commented out or "dead code"  |  X   |     |
-OPTIONAL - HTML inputs use validation (i.e. `pattern` attribute w/RegExp) as needed                 |     |     |
+OPTIONAL - HTML inputs use validation (i.e. `pattern` attribute w/RegExp) as needed                 |     |  X   |
 
 
 JavaScript                    | Yes |  No |
