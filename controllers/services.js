@@ -43,7 +43,6 @@ function create(req, res) {
 function editReview(req, res) {
     Service.findById(req.params.serviceid, function(err, service) {
         const review = service.reviews.id(req.params.reviewid);
-        console.log(review)
         res.render('services/updateReview', {
             title: "Update Review", 
             user: req.user, 
